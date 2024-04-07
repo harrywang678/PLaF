@@ -66,7 +66,50 @@ let rec eval_expr : expr -> exp_val ea_result =
     string_of_env >>= fun str ->
     print_endline str; 
     error "Debug called"
+  | Cons(e1, e2) ->
+    eval_expr e1 >>= fun lst1 ->
+    eval_expr e2 >>= 
+    list_of_listVal >>= fun lst2 ->
+    return @@ (ListVal (lst1 :: lst2))
+  | Hd(e) ->  
+    eval_expr e >>=
+    list_of_listVal >>= fun l ->
+    if List.length l = 0
+    then error "Error: Empty List"
+    else return @@ (List.hd l)
+  | Tl(e) ->  
+    eval_expr e >>=
+    list_of_listVal >>= fun l ->
+    if List.length l == 0
+    then error "Error: Empty List"
+    else return @@ ListVal(List.tl l)
+  | IsEmpty(e)  ->
+    eval_expr e >>=
+    list_of_listVal >>= fun lst ->
+    if List.length lst = 0 
+    then return (BoolVal true)
+    else return (BoolVal false)
+  | EmptyList(_t) -> 
+    return (ListVal([]))
+  | Tuple (es) -> 
+    sequence (List.map eval_expr es) >>= fun tup ->
+      return (TupleVal(tup))
+  | Untuple (ids,e1,e2) -> 
+    eval_expr e1 >>= list_of_tupleVal >>= fun tup ->
+      if List.length ids <> List.length tup then
+        error "extend_env_list: Arguments do not match parameters!"
+      else
+        tuphelp ids tup >>+ eval_expr e2
   | _ -> failwith "Not implemented yet!"
+and 
+  eval_exprs : expr list -> ( exp_val list ) ea_result =
+  fun es ->
+  match es with
+    | [] -> return []
+    | h :: t -> eval_expr h >>= fun i ->
+      eval_exprs t >>= fun l ->
+      return ( i :: l )
+
 
 (** [eval_prog e] evaluates program [e] *)
 let eval_prog (AProg(_,e)) =

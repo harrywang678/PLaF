@@ -1,0 +1,31 @@
+# dune utop
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/harrywang/.cache/dune/db
+# Workspace root: /Users/harrywang/CS496/PLaF/src/proc
+# Auto-detected concurrency: 10
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/Users/harrywang/CS496/PLaF/src/proc/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; instrument_with = []
+#  }
+$ /Users/harrywang/.opam/default/bin/ocamlc.opt -config > /var/folders/90/y84prmsn3jj9jskqmk9zgyrr0000gn/T/dune_c8553c_output
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/.proc.objs/byte -no-alias-deps -opaque -o lib/.proc.objs/byte/proc.cmo -c -impl lib/proc.ml-gen)
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamldep.opt -modules -impl lib/interp.ml) > _build/default/lib/.proc.objs/proc__Interp.impl.d
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamldep.opt -modules -impl lib/ds.ml) > _build/default/lib/.proc.objs/proc__Ds.impl.d
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.proc.objs/byte -I /Users/harrywang/.opam/default/lib/menhirLib -I /Users/harrywang/.opam/default/lib/parser_plaf -no-alias-deps -opaque -open Proc -o lib/.proc.objs/byte/proc__Ds.cmo -c -impl lib/ds.ml)
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I lib/.proc.objs/byte -I /Users/harrywang/.opam/default/lib/menhirLib -I /Users/harrywang/.opam/default/lib/parser_plaf -no-alias-deps -opaque -open Proc -o lib/.proc.objs/byte/proc__Interp.cmo -c -impl lib/interp.ml)
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o lib/proc.cma lib/.proc.objs/byte/proc.cmo lib/.proc.objs/byte/proc__Ds.cmo lib/.proc.objs/byte/proc__Interp.cmo)
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I .utop/.utop.eobjs/byte -I /Users/harrywang/.opam/default/lib/bytes -I /Users/harrywang/.opam/default/lib/findlib -I /Users/harrywang/.opam/default/lib/lambda-term -I /Users/harrywang/.opam/default/lib/logs -I /Users/harrywang/.opam/default/lib/lwt -I /Users/harrywang/.opam/default/lib/lwt/unix -I /Users/harrywang/.opam/default/lib/lwt_react -I /Users/harrywang/.opam/default/lib/menhirLib -I /Users/harrywang/.opam/default/lib/mew -I /Users/harrywang/.opam/default/lib/mew_vi -I /Users/harrywang/.opam/default/lib/ocaml/compiler-libs -I /Users/harrywang/.opam/default/lib/ocaml/threads -I /Users/harrywang/.opam/default/lib/ocaml/unix -I /Users/harrywang/.opam/default/lib/ocplib-endian -I /Users/harrywang/.opam/default/lib/ocplib-endian/bigstring -I /Users/harrywang/.opam/default/lib/parser_plaf -I /Users/harrywang/.opam/default/lib/react -I /Users/harrywang/.opam/default/lib/result -I /Users/harrywang/.opam/default/lib/trie -I /Users/harrywang/.opam/default/lib/uchar -I /Users/harrywang/.opam/default/lib/utop -I /Users/harrywang/.opam/default/lib/uucp -I /Users/harrywang/.opam/default/lib/uuseg -I /Users/harrywang/.opam/default/lib/uutf -I /Users/harrywang/.opam/default/lib/xdg -I /Users/harrywang/.opam/default/lib/zed -I lib/.proc.objs/byte -no-alias-deps -o .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl .utop/utop.ml-gen)
+$ (cd _build/default && /Users/harrywang/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o .utop/utop.bc /Users/harrywang/.opam/default/lib/ocaml/compiler-libs/ocamlcommon.cma /Users/harrywang/.opam/default/lib/ocaml/compiler-libs/ocamlbytecomp.cma /Users/harrywang/.opam/default/lib/ocaml/compiler-libs/ocamltoplevel.cma /Users/harrywang/.opam/default/lib/findlib/findlib.cma /Users/harrywang/.opam/default/lib/findlib/findlib_top.cma /Users/harrywang/.opam/default/lib/logs/logs.cma /Users/harrywang/.opam/default/lib/lwt/lwt.cma /Users/harrywang/.opam/default/lib/logs/logs_lwt.cma /Users/harrywang/.opam/default/lib/ocplib-endian/ocplib_endian.cma /Users/harrywang/.opam/default/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /Users/harrywang/.opam/default/lib/ocaml/unix/unix.cma /Users/harrywang/.opam/default/lib/ocaml/threads/threads.cma /Users/harrywang/.opam/default/lib/lwt/unix/lwt_unix.cma -I /Users/harrywang/.opam/default/lib/lwt/../stublibs /Users/harrywang/.opam/default/lib/react/react.cma /Users/harrywang/.opam/default/lib/lwt_react/lwt_react.cma /Users/harrywang/.opam/default/lib/result/result.cma /Users/harrywang/.opam/default/lib/uutf/uutf.cma /Users/harrywang/.opam/default/lib/uucp/uucp.cma /Users/harrywang/.opam/default/lib/uuseg/uuseg.cma /Users/harrywang/.opam/default/lib/zed/zed.cma /Users/harrywang/.opam/default/lib/trie/trie.cma /Users/harrywang/.opam/default/lib/mew/mew.cma /Users/harrywang/.opam/default/lib/mew_vi/mew_vi.cma /Users/harrywang/.opam/default/lib/lambda-term/lambda_term.cma -I /Users/harrywang/.opam/default/lib/lambda-term/../stublibs /Users/harrywang/.opam/default/lib/xdg/xdg.cma -I /Users/harrywang/.opam/default/lib/xdg/../stublibs /Users/harrywang/.opam/default/lib/utop/uTop.cma /Users/harrywang/.opam/default/lib/menhirLib/menhirLib.cma /Users/harrywang/.opam/default/lib/parser_plaf/parser_plaf.cma lib/proc.cma .utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)
